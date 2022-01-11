@@ -16,6 +16,16 @@ public class LinkedList {
         } // Constructor
     }
 
+    public  void addingValuesFromFirst(int key){
+        Node newNode = new Node(key);
+        if(head==null){
+            head=newNode;
+            return;
+        }
+        newNode.next=head;
+        head=newNode;
+    }
+
     /* This function prints contents of linked list starting from head */
     public void printList() {
         Node n = head;
@@ -30,13 +40,9 @@ public class LinkedList {
         /* Start with the empty list. */
         LinkedList llist = new LinkedList();
 
-        llist.head = new Node(56);
-        Node second = new Node(30);
-        Node third = new Node(70);
-
-        llist.head.next = second; // Link first node with the second node
-        second.next = third; // Link second node with the third node
-
+        llist.addingValuesFromFirst(70);
+        llist.addingValuesFromFirst(30);
+        llist.addingValuesFromFirst(56);
         llist.printList();
     }
 
